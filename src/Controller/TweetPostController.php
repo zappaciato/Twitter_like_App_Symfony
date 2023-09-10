@@ -67,7 +67,8 @@ class TweetPostController extends AbstractController
                 );
         
         }
-    #[Route('/tweetpost/remove/{id}', name: 'app_tweet_post_add', priority: 2)]
+
+        #[Route('/tweetpost/remove/{id}', name: 'app_tweet_post_remove', priority: 1)]
         public function remove(EntityManagerInterface $entityManager, TweetPostRepository $tweetPosts, int $id) : Response 
         {
             $foundTweet = $tweetPosts->find($id);
