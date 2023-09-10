@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TweetPostController extends AbstractController
 {
-    #[Route('/tweetposts', name: 'app_tweet_posts')]
-    public function index(): Response
+    #[Route('/tweetposts/{limit</d+>?3}', name: 'app_tweet_posts')]
+    public function index(int $limit): Response
     {   
         return $this->render('tweet_post/index.html.twig', [
             'controller_name' => 'TweetPostController',
