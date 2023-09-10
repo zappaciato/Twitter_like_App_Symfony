@@ -3,13 +3,13 @@
 namespace App\Controller;
 
 use App\Repository\TweetPostRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TweetPostController extends AbstractController
 {
-    #[Route('/tweetposts/{limit</d+>?3}', name: 'app_tweet_posts')]
+    #[Route('/tweetposts/{limit<\d+>?3}', name: 'app_tweet_posts')]
     public function index(TweetPostRepository $tweetPosts): Response
     {
         $allTweetPosts = $tweetPosts->findAll();
@@ -19,7 +19,7 @@ class TweetPostController extends AbstractController
         ]);
     }
 
-    #[Route('/tweetpost/{id}', name: 'app_tweet_post')]
+    #[Route('/tweetpost/{id<\d+>}', name: 'app_tweet_post')]
     public function showOne(TweetPostRepository $tweetPosts, int $id) : Response {
 
         $tweetPost = $tweetPosts->find($id);
