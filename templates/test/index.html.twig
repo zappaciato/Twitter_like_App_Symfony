@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h2>Hellod!</h2>
+
+{{ include('test/_test.html.twig') }}
+
+{% for key, exmp in exampleArray %}
+<p>{{key}}:: {{exmp}}</p>
+{% endfor %}
+<p>That is it!</p>
+{% endblock %}
