@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TweetPostController!{% endblock %}
+{% block title %}TweetPost {{tweetPost.id}}{% endblock %}
 
 {% block body %}
 <style>
@@ -10,15 +10,12 @@
 
 <div class="example-wrapper">
     {# <h1>Hello {{ controller_name }}! ✅</h1> #}
-    {% if allTweetPosts|length > 0 %}
-    {% for key, tweetPost in allTweetPosts %}
-    <h4> <a href="{{ path('app_tweet_post', {id : tweetPost.id }) }}"> {{ tweetPost.title }}. This is the key :  {{key}}</a> </h4>
     <img src='{{ tweetPost.picture }}' alt='Post picture!'width="500" height="600"></img>
-    {% endfor %}
-    {% else %}
-    <h5>NO Posts!!!!!</h5>
-    {% endif %}
-    This friendly message is coming from:
+        {# <img src='../images/picture.jpg' alt='Post picture!'width="500" height="600"> #}
+        {{ tweetPost.title }}
+        {{ tweetPost.text }}
+        {# {{ tweetPost.created }} #}
+            This  is single!
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/Twitter_like_App/Twitter_like_App_Symfony6/src/Controller/TweetPostController.php'|file_link(0) }}">src/Controller/TweetPostController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/Twitter_like_App/Twitter_like_App_Symfony6/templates/tweet_post/index.html.twig'|file_link(0) }}">templates/tweet_post/index.html.twig</a></code></li>
